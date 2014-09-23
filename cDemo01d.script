@@ -1,0 +1,56 @@
+// Copyright (c) 2014 Mimetics Inc.
+// All Rights Reserved
+//
+// THIS SOFTWARE IS PROVIDED BY MIMETICS "AS IS" WITHOUT ANY EXPRESSED OR 
+// IMPLIED WARRANTIES.  IN NO CASE SHALL MIMETICS OR ANY CONTRIBUTORS BE
+// LIABLE IN ANY DAMAGES CAUSED BY THE USE OF THIS SOFTWARE.  
+//
+// FileName: cDemo01d.script
+// Version : 01.0
+//
+// Author  : myke predko
+//
+// Description: Demonstrate how to make the Jade Robot Move
+//
+// Release History:
+//  cDemo01c - Start the Jade Robot Moving Forwards at 1/4 Speed
+//           - Delay for 1s, Time for Robot Moving
+//           - Stop the Jade Robot
+//           - Delay for 1s
+//           - Repeat previous steps for 1/2 Speed, 3/4 Speed, Full Speed
+
+    syscall(motorset, "25:25");    //  Left Motor = Right Motor = 25 = 1/4 Full Forwards
+
+    syscall(delay, itos(1000));    //  Delay for 1,000ms = 1s
+
+    syscall(motorset, "0:0");      //  Turn off the motors (stop)
+
+    syscall(delay, itos(1000));    //  Delay for 1,000ms = 1s
+
+
+    syscall(motorset, "50:50");    //  Left Motor = Right Motor = 50 = 1/2 Full Forwards
+
+    syscall(delay, itos(1000));    
+
+    syscall(motorset, "0:0");      
+
+    syscall(delay, itos(1000));    
+
+
+    syscall(motorset, "75:75");    //  Left Motor = Right Motor = 75 = 3/4 Full Forwards
+
+    syscall(delay, itos(1000));    
+
+    syscall(motorset, "0:0");      
+
+    syscall(delay, itos(1000));    
+
+
+    syscall(motorset, "100:100");  //  Left Motor = Right Motor = 100 = Full Forwards
+
+    syscall(delay, itos(1000));    
+
+    syscall(motorset, "0:0");      
+
+//    syscall(delay, itos(1000));    //  Delay for 1,000ms = 1s
+//  NOTE: This statement is not required because the Jade Robot is stoped and the program is finished
